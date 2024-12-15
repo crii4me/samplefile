@@ -4,56 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Love Q&A</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Poppins', sans-serif;
             background-color: #ffc0cb;
-            font-family: "Brush Script MT", cursive;
             text-align: center;
             padding: 50px;
             color: #333;
             animation: fadeIn 2s;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #ff497a;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
         }
 
         button {
+            font-family: 'Poppins', sans-serif;
             padding: 10px 20px;
-            background-color: #ff6f91;
-            color: white;
+            background-color: #d7798f; /* Button background color */
+            color: black; /* Text color for the button */
             border: none;
             border-radius: 5px;
             font-size: 1.2em;
             cursor: pointer;
-            animation: pop 0.5s infinite alternate;
-        }
-
-        @keyframes pop {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
+            animation: bounce 1s infinite alternate;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #ff497a;
+            background-color: #ff497a; /* Hover effect with a darker shade */
         }
 
         .gif {
             max-width: 80%;
             height: auto;
             margin: 20px auto;
+            animation: fadeInImage 2s ease-out;
         }
 
         .message {
             margin-top: 30px;
             font-size: 1.5em;
-            animation: fadeInMessage 2s ease-in-out;
+            font-family: 'Poppins', sans-serif;
+            animation: slideInMessage 2s ease-out;
+            color: #555;
+            position: relative;
+            display: inline-block;
         }
 
-        @keyframes fadeInMessage {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Sparkle effect */
+        .sparkle {
+            position: relative;
+            color: #ff497a;
+            font-size: 1.6em;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sparkle:before {
+            content: '\2022'; /* Unicode character for a bullet point */
+            position: absolute;
+            animation: sparkleAnimation 1.5s infinite;
+            top: -5px;
+            left: 5px;
+            color: #fff;
+            font-size: 10px;
+        }
+
+        .sparkle:after {
+            content: '\2022'; /* Another sparkle */
+            position: absolute;
+            animation: sparkleAnimation 1.5s infinite;
+            top: 5px;
+            right: 5px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Animation for fading in the page */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Animation for the heading sliding in */
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Animation for the button bouncing */
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Animation for fading in images */
+        @keyframes fadeInImage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Animation for sliding in the message */
+        @keyframes slideInMessage {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
@@ -82,7 +157,7 @@
                 <img src="https://media.giphy.com/media/6LTzr8tytVO92/giphy.gif" alt="Happy Christmas Gif" class="gif">
                 <h1>Merry Christmas, I love you! 🎄❤️</h1>
                 <img src="https://media.giphy.com/media/6i48JlbyM9UokosELP/giphy.gif" alt="Genshin Impact Gif" class="gif">
-                <div class="message">
+                <div class="message sparkle">
                     <p>**Merry Christmas, My Love** 🎄❤️</p>
                     <p>Every time I think about us, my heart feels so full I could burst. This Christmas, I just want to say how much you mean to me. You’re not just my boyfriend—you’re my safe place, my home, and my whole world.</p>
                     <p>I love how you’re so dominant yet so gentle and caring with me. The way you always make me feel like I’m your soft spot melts me every time you say it. You’re this strong, confident man, and yet, when it comes to me, you turn into this sweet, loving person who makes me feel like the most special girl in the world.</p>
@@ -105,4 +180,3 @@
     </script>
 </body>
 </html>
-
